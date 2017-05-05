@@ -45,3 +45,8 @@
 # eval_block(1, 2, 3)
 # # => "NO BLOCK GIVEN"
 # ```
+
+def eval_block(*arg, &block)
+  raise "NO BLOCK GIVEN" unless block_given?
+  block.call(*arg)
+end
